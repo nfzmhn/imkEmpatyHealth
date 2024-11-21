@@ -12,7 +12,7 @@
       <div class="inner-box">
         <div class="forms-wrap">
           <div class="logo">
-            <img src="{{ asset('lg/img/Logo UIN.png') }}" alt="Logo UIN">
+            <img src="{{ asset('lg/img/Logo medybudy.png') }}" alt="Logo medybudy">
           </div>
           <form class="sign-in-form" action="{{ route('login.proses') }}" method="POST">
             @csrf 

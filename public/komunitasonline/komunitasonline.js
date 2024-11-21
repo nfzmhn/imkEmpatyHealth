@@ -34,14 +34,14 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     // Navigasi ke halaman Group Chat
     groupChat.addEventListener("click", function () {
-        window.location.href = "#"; // URL tujuan
+        window.location.href = "#"; 
     });
     // Navigasi ke halaman Profile
     profile.addEventListener("click", function () {
-        window.location.href = "#"; // URL tujuan
+        window.location.href = "#"; 
     });
     logout.addEventListener("click", function () {
-        window.location.href = "../lg/index.html"; // URL tujuan
+        window.location.href = "../lg/index.html"; 
     })
    
 });

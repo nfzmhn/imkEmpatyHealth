@@ -44,7 +44,7 @@
 <!-- Layanan Section -->
 <section id="layanan" class="py-5 bg-white">
     <div class="article-header">
-        <h1>KLINIK PRATAMA</h1>
+        <h1>MedyBudy</h1>
         <p>Berawal dari langkah kecil namun penuh tekad pada tahun 1921, Klinik Pratama kini tengah melangkah menuju impian besar menjadi salah satu rumah sakit terkemuka di Jawa Barat...</p>
     </div>
     <div class="container">

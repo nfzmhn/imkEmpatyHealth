@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daftar Klinik Pratama</title>
-    <link rel="stylesheet" href="datadiri.css">
+    <link rel="stylesheet" href="{{ asset('lg/datadiri/datadiri.css') }}">
 </head>
 
 <body>
@@ -16,7 +16,7 @@
             <div class="inner-box">
                 <div class="forms-wrap">
                     <div class="logo">
-                        <img src="../img/Logo medybudy.png">
+                        <img src="{{ asset('lg/img/Logo medybudy.png') }}">
                     </div>
                     <form class="sign-up-form" onsubmit="redirectToLogin(event)">
                         <div class="heading">
@@ -86,10 +86,10 @@
                   onblur="if(this.value===''){this.type='text'}" required />
               </div> -->
 
-                            <button type="submit" class="sign-btn" href="">Sign Up</button>
+                            <button type="submit" class="sign-btn" href="{{ route('login') }}">Sign Up</button>
 
                             <div class="to-signup">
-                                <p>Sudah punya akun? <a href="../login/login.html" class="toggle">Masuk disini!</a></p>
+                                <p>Sudah punya akun? <a href="{{ route('login') }}" class="toggle">Masuk disini!</a></p>
                             </div>
                         </div>
                     </form>
@@ -98,8 +98,8 @@
             </div>
         </div>
     </main>
-    
-    <script src="datadiri.js"></script>
+
+    <script src="{{ asset('datadiri/datadiri.js') }}"></script>
 </body>
 
 </html>

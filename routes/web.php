@@ -32,6 +32,7 @@ Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::get('/daftar', [LoginController::class, 'register'])->name('register');
 Route::post('daftar', [LoginController::class, 'register_proses'])->name('register.proses');
 
+
 Route::get('/layanan', [ServiceController::class, 'index'])->name('layanan');
 
 Route::get('/profileuser', [ProfileController::class, 'index'])->name('profileuser');

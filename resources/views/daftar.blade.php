@@ -14,7 +14,7 @@
       <div class="inner-box">
         <div class="forms-wrap">
           <div class="logo">
-            <img src="{{ asset('lg/img/Logo UIN.png') }}" alt="Logo UIN">
+            <img src="{{ asset('lg/img/Logo medybudy.png') }}" alt="Logo medybudy">
           </div>
           <form class="sign-up-form" method="POST" action="{{ route('register') }}">
             @csrf
@@ -29,7 +29,7 @@
                 @error('name') <small class="error">{{ $message }}</small> @enderror
               </div>
               <div class="input-wrap">
-                <input type="text" name="namadepan" class="input-field" value="{{ old('name') }}" required placeholder="Nama Belakang" />
+                <input type="text" name="namabelakang" class="input-field" value="{{ old('name') }}" required placeholder="Nama Belakang" />
                 @error('name') <small class="error">{{ $message }}</small> @enderror
               </div>
 
@@ -48,10 +48,10 @@
                 <small class="note">Nomor WhatsApp aktif</small>
               </div>
 
-              <div class="input-wrap">
+              <!-- <div class="input-wrap">
                 <input type="text" name="no_identitas" class="input-field" value="{{ old('identity_number') }}" required placeholder="Nomor Identitas" />
                 <small class="note">NIM, NIP atau NIK (Masukan salah satu)</small>
-              </div>
+              </div> -->
 
               <div class="input-wrap">
                 <input type="text" name="tgl_lahir" class="input-field" value="{{ old('birth_date') }}" placeholder="Tanggal Lahir" onfocus="(this.type='date')" onblur="if(this.value===''){this.type='text'}" required />
@@ -60,7 +60,7 @@
               <button type="submit" class="sign-btn">Sign Up</button>
 
               <div class="to-signup">
-                <p>Sudah punya akun? <a href="{{ route('login') }}" class="toggle">Masuk disini!</a></p>
+                <p>Sudah punya akun? <a href="{{ route('datadiri') }}" class="toggle">Masuk disini!</a></p>
               </div>
             </div>
           </form>
