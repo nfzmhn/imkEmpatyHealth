@@ -1,4 +1,4 @@
-/* body, input {
+body, input {
     font-family: 'Poppins', sans-serif;
   }
 .navbar {
@@ -33,7 +33,7 @@
     height: 30px;
     margin-left: 5px;
     vertical-align: middle;
-} */
+}
 
 /* Home Section */
 #home {
