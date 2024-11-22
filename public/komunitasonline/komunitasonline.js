@@ -9,7 +9,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const logout = document.getElementById("logout"); // Ikon logout
 
 
-
   
     toggleButton.addEventListener("click", function () {
       sidebar.classList.toggle("expanded"); // Toggle class expanded
