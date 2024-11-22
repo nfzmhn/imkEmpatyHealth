@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
   // Navigasi ke halaman Group Chat
   groupChat.addEventListener("click", function () {
-      window.location.href = "#"; 
+      window.location.href = "../komunitasonline/komunitasonline.html"; 
   });
   // Navigasi ke halaman Profile
   profile.addEventListener("click", function () {
