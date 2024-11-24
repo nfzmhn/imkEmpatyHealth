@@ -262,7 +262,7 @@ body, input {
   background-color: #18a69f; /* teal color overlay */
 }
 
-#cek-lab:hover::before {
+#rekam-medis:hover::before {
   opacity: 1;
   background-color: #18a69f; /* blue color overlay */
 }
