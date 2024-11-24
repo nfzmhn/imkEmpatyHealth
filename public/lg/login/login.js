@@ -8,13 +8,9 @@ document.querySelector(".toggle").addEventListener("click", function(event) {
   window.location.href = '{{ route("daftar") }}';
 });
 
-function signInWithGoogle() {
-  alert("Fungsi Sign in with Google belum tersedia.");
-}
-
 document.addEventListener("DOMContentLoaded", function () {
     const submit = document.querySelector(".sign-btn");
     submit.addEventListener("click", function () {
       window.location.href = '{{ route("halamanutama") }}';
     });
-  });
+ });
