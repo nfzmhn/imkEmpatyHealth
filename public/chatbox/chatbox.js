@@ -7,9 +7,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const groupChat = document.getElementById("groupChat"); // Ikon groupchat
   const profile = document.getElementById("profile"); // Ikon profile
   const logout = document.getElementById("logout"); // Ikon logout
-
-
-
+  const chatInput = document.querySelector(".chat-input textarea");
+  const sendChatBtn = document.querySelector(".chat-input span");
+  const chatbox = document.querySelector(".chatbox");
 
   toggleButton.addEventListener("click", function () {
     sidebar.classList.toggle("expanded"); // Toggle class expanded
@@ -40,4 +40,22 @@ document.addEventListener("DOMContentLoaded", function () {
       window.location.href = "../lg/index.html"; 
   })
  
+  let userMessage;
+
+  const createChatLi = (message, className) => {
+  const chatLi = document.createElement("li");
+  chatLi.classList.add("chat", className);
+  let chatContent = className === "outgoing" ? `<p>${message}</p>` : `<img src="../lg/img/Ellipse 8.png" alt="Profile"><p>${message}</p>`;
+  chatLi.innerHTML = chatContent;
+  return chatLi;
+}
+
+const handleChat = () => {
+  userMessage = chatInput.value.trim();
+  if(!userMessage) return;
+
+  chatbox.appendChild(createChatLi(userMessage, "outgoing"));
+}
+  sendChatBtn.addEventListener("click", handleChat);
+
 });
