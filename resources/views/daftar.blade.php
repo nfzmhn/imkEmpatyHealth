@@ -57,7 +57,7 @@
                 <input type="text" name="tgl_lahir" class="input-field" value="{{ old('birth_date') }}" placeholder="Tanggal Lahir" onfocus="(this.type='date')" onblur="if(this.value===''){this.type='text'}" required />
               </div>              
 
-              <button type="submit" class="sign-btn">Sign Up</button>
+              <button type="submit" class="sign-btn">Lengkapi data diri</button>
 
               <div class="to-signup">
                 <p>Sudah punya akun? <a href="{{ route('datadiri') }}" class="toggle">Masuk disini!</a></p>
