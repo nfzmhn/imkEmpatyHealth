@@ -66,8 +66,12 @@
                 @error('tgl_lahir') <small class="error">{{ $message }}</small> @enderror
               </div>
 
+<<<<<<< HEAD
               <!-- Tombol Submit -->
               <button type="submit" class="sign-btn">Sign Up</button>
+=======
+              <button type="submit" class="sign-btn">Lengkapi data diri</button>
+>>>>>>> 9caa69230c2925c3e169ea596a286d23c328bc50
 
               <!-- Link ke Halaman Login -->
               <div class="to-signup">
