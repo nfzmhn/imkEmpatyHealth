@@ -5,8 +5,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Klinik Pratama</title>
-    
+    <title>Medy Budy</title>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ asset('buatjanji/buatjanji.css') }}">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
@@ -61,7 +61,7 @@
             <span id="close-popup" class="close-popup">&times;</span>
         </div>
     </div>
-    
+
     <script src="{{ asset('buatjanji/buatjanji.js') }}"></script>
 </body>
 

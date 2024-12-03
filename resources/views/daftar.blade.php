@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Daftar Klinik Pratama</title>
+  <title>Daftar Medy Budy</title>
   <link rel="stylesheet" href="{{ asset('lg/daftar/daftar.css') }}">
 </head>
 

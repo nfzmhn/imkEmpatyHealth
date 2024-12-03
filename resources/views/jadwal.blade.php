@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jadwal Dokter</title>
+    <title>Medy Budy</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ asset('jadwaldok/jadwaldok.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
@@ -38,7 +38,7 @@
                     <div class="day-time"><span>Kamis</span> <span>07.30-12.00 WIB</span></div>
                 </div>
             </div>
-        </div> 
+        </div>
     </div>
 
     <!-- Umum Doctor Cards -->
@@ -52,7 +52,7 @@
                     <div class="day-time"><span>Senin</span> <span>07.30-11.30 WIB</span></div>
                     <div class="day-time"><span>Selasa</span> <span>07.30-11.30 WIB</span></div>
                     <div class="day-time"><span>Rabu</span> <span>07.30-11.30 WIB</span></div>
-                    <div class="day-time"><span>Rabu</span> <span>13.00-15.00 WIB</span></div>
+                    <div class="day-time"><span>Kamis</span> <span>13.00-15.00 WIB</span></div>
                 </div>
             </div>
         </div>
@@ -65,7 +65,7 @@
                     <div class="day-time"><span>Senin</span> <span>07.30-11.30 WIB</span></div>
                     <div class="day-time"><span>Selasa</span> <span>07.30-11.30 WIB</span></div>
                     <div class="day-time"><span>Rabu</span> <span>07.30-11.30 WIB</span></div>
-                    <div class="day-time"><span>Rabu</span> <span>13.00-15.00 WIB</span></div>
+                    <div class="day-time"><span>Kamis</span> <span>13.00-15.00 WIB</span></div>
                 </div>
             </div>
         </div>
@@ -78,7 +78,7 @@
                     <div class="day-time"><span>Senin</span> <span>07.30-11.30 WIB</span></div>
                     <div class="day-time"><span>Selasa</span> <span>07.30-11.30 WIB</span></div>
                     <div class="day-time"><span>Rabu</span> <span>07.30-11.30 WIB</span></div>
-                    <div class="day-time"><span>Rabu</span> <span>13.00-15.00 WIB</span></div>
+                    <div class="day-time"><span>Kamis</span> <span>13.00-15.00 WIB</span></div>
                 </div>
             </div>
         </div>

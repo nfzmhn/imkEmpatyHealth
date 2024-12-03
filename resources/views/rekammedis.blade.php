@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Klinik Pratama</title>
+    <title>Rekam Medis</title>
     <!-- <link rel="stylesheet" href="{{ asset('buatjanji/buatjanji.css') }}"> -->
 
     <link rel="stylesheet" href="{{ asset ('rekammedis/rekammedis.css') }}">
@@ -19,7 +19,7 @@
         <div class="container">
             <a class="navbar-brand" href="#">
 
-                <img src="{{ asset('lg/img/Logo medybudy.png') }}" alt="Klinik Pratama" class="navlogo"> KLINIK PRATAMA
+                <img src="{{ asset('lg/img/Logo medybudy.png') }}" alt="Simpatico Health" class="navlogo"> Simpatico Health
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -79,7 +79,7 @@
                 <p class="jarak"><strong>dr. Pikmi</strong> | Spesialis THT</p>
                 <p class="jarak">Diagnosa : Gangguan Fungsi Telinga</p>
               </div>
-              <button class="forum-btn" data-link="{{ url('/chatbox')}}">Masuk Forum</button>
+              <button class="forum-btn" data-link="{{ url('/chat-box')}}">Masuk Forum</button>
             </div>
             <div class="history-card">
               <div class="history-date">
@@ -94,7 +94,7 @@
                 <p class="jarak"><strong>dr. Hary Suryapranata</strong> | Spesialis Jantung</p>
                 <p class="jarak">Diagnosa : Serangan Jantung Ringan</p>
               </div>
-              <button class="forum-btn" data-link="{{ url('/chatbox')}}">Masuk Forum</button>
+              <button class="forum-btn" data-link="{{ url('/chat-box')}}">Masuk Forum</button>
             </div>
             <div class="history-card">
               <div class="history-date">
@@ -109,7 +109,7 @@
                 <p class="jarak"><strong>dr. Ichsan Budiono</strong> | Spesialis Alergi</p>
                 <p class="jarak">Diagnosa : Alergi Debu</p>
               </div>
-              <button class="forum-btn" data-link="{{ url('/chatbox')}}">Masuk Forum</button>
+              <button class="forum-btn" data-link="{{ url('/chat-box')}}">Masuk Forum</button>
             </div>
           </section>
       </main>

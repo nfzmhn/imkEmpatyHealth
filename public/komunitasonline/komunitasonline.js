@@ -9,10 +9,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const logout = document.getElementById("logout"); // Ikon logout
 
 
-  
+
     toggleButton.addEventListener("click", function () {
       sidebar.classList.toggle("expanded"); // Toggle class expanded
-  
+
       // Ubah ikon saat sidebar diperluas
       if (sidebar.classList.contains("expanded")) {
         iconCompact.style.display = "none";
@@ -26,22 +26,21 @@ document.addEventListener("DOMContentLoaded", function () {
     // function redirectToPage(page) {
     //   window.location.href = tht.html; // Di sini page adalah 'tht.html'
     // }
-    
+
     // Navigasi ke halaman dashboard
     dashboard.addEventListener("click", function () {
-        window.location.href = "../halamanutama/halamanutama.html"; // URL tujuan
+        window.location.href = "../halaman-utama"; // URL tujuan
     });
     // Navigasi ke halaman Group Chat
     groupChat.addEventListener("click", function () {
-        window.location.href = "#"; 
+        window.location.href = "../komunitas-online";
     });
     // Navigasi ke halaman Profile
     profile.addEventListener("click", function () {
-        window.location.href = "#"; 
+        window.location.href = "../profileuser";
     });
     logout.addEventListener("click", function () {
-        window.location.href = "../lg/index.html"; 
+        window.location.href = "../";
     })
-   
+
 });
-  
