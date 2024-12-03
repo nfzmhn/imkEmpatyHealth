@@ -1,4 +1,3 @@
-
 @extends("layouts.frontend")
 @section("content")
 <!DOCTYPE html>
@@ -180,6 +179,7 @@
                     </div>
                 </div>
             </div>
+
 
             <!-- Form Section -->
             <div class="col-md-8 p-4 form-section">

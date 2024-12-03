@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="{{ asset('lg/service/service.css') }}">
 </head>
 <body>
-  
+
   <!-- header section -->
   <header>
   <a href="#" class="logo">
@@ -19,7 +19,7 @@
     <nav class="navbar">
       <a href="{{ url('/halamanutama#home') }}" class="active">Beranda</a>
       <a href="{{ url('/halamanutama#artikel') }}">Artikel</a>
-      <a href="#layanan">Layanan</a>
+      <a href="{{ url('/halamanutama#services') }}">Layanan</a>
       <a href="{{ url('/halamanutama#kontak') }}">Kontak</a>
     </nav>
     <div class="user-profile">
