@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Klinik Pratama</title>
+    <title>Simpatico Health</title>
     <!-- <link rel="stylesheet" href="{{ asset('buatjanji/buatjanji.css') }}"> -->
 
     <link rel="stylesheet" href="{{ asset ('rekammedis/rekammedis.css') }}">
@@ -13,7 +13,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-    <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <!-- <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">
                 
@@ -37,7 +37,7 @@
                 </ul>
             </div>
         </div>
-    </nav>
+    </nav> -->
 
     <main class="main">
         <section class="profile-section">

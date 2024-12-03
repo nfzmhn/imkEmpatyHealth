@@ -1,11 +1,12 @@
 @extends("layouts.frontend")
 @section("content")
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Klinik Pratama</title>
+    <title>Simpatico Health</title>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ asset('buatjanji/buatjanji.css') }}">
@@ -14,7 +15,7 @@
 </head>
 <body>
     <section class="header-title">
-        <h1>REGISTRASI<br>JANJI KLINIK</h1>
+        <h1>REGISTRASI<br>JANJI DOKTER</h1>
     </section>
 
     <section id="buatjanji" class="py-5 bg-white">

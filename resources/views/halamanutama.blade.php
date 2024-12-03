@@ -119,35 +119,26 @@
     <section class="services" id="services">
   <h1>We offer several services <br>To Improve Your Health</h1>
   <div class="services-container">
-    <a href="{{ url('/janji') }}" style="text-decoration: none; color: inherit;">
-    <div class="service-box" id="buat-janji">
-      <img src="{{ asset('lg/img/janjidok.png') }}" alt="Buat Janji Klinik">
-      <h3>Buat Janji Klinik</h3>
-      <p>Buat janji dengan mudah dan bebas antre</p>
-    </div>
-    </a>
-    <div class="service-box" id="cek-lab">
-      <img src="{{ asset('lg/img/ceklab.png') }}" alt="Cek Laboratorium">
-      <h3>Cek Laboratorium</h3>
-      <p>Cek lab tanpa ribet hanya dengan beberapa ketukan jari</p>
-    </div>
-    <!-- <div class="service-box" id="konsultasi-online">
-      <img src="{{ asset('lg/img/konsul.png') }}" alt="Konsultasi Online">
-      <h3>Konsultasi Online</h3>
-      <p>Konsultasi dengan dokter hanya dengan handphone</p>
-    </div> -->
-    <div class="service-box" id="cek-radiologi">
-      <img src="{{ asset('lg/img/cekradio.png') }}" alt="Cek Radiologi">
-      <h3>Cek Radiologi</h3>
-      <p>Cek Radiologi dengan hasil yang akurat</p>
-    </div>
-    <a href="{{ url('/jadwal') }}" style="text-decoration: none; color: inherit;">
-    <div class="service-box" id="jadwal-dokter">
-      <img src="{{ asset('lg/img/jadwaldok.png') }}" alt="Jadwal Dokter">
-      <h3>Jadwal Dokter</h3>
-      <p>Sesuaikan jadwal dokter untuk waktu yang lebih pas</p>
-    </div>
-    </a>
+    <a href="{{ url('/janji') }}" style="text-decoration: none; color: inherit;" class="service-box" id="buat-janji">
+                    <img src="{{ asset('lg/img/janjidok.png') }}" alt="Buat Janji Klinik">
+                    <h3>Buat Janji Klinik</h3>
+                    <p>Buat janji dengan mudah dan bebas antre</p>
+                </a>
+                <a href="{{ url('/rekammedis') }}" style="text-decoration: none; color: inherit;" class="service-box" id="rekam-medis">
+                    <img src="{{ asset('lg/img/ceklab.png') }}" alt="Cek Laboratorium">
+                    <h3>Rekam Medis</h3>
+                    <p>Lihat riwayat penyakit yang di alami</p>
+                </a>
+                <a href="{{ url ('/komunitasonline') }}" style="text-decoration: none; color: inherit;"class="service-box" id="konsultasi-online">
+                    <img src="{{ asset('lg/img/konsul.png') }}" alt="Konsultasi Online">
+                    <h3>Komunitas Online</h3>
+                    <p>Konsultasi dengan dokter hanya dengan handphone</p>
+                </a>
+                <a href="{{ url('/jadwaldok') }}" style="text-decoration: none; color: inherit;" class="service-box" id="jadwal-dokter">
+                    <img src="{{ asset('lg/img/jadwaldok.png') }}" alt="Jadwal Dokter">
+                    <h3>Jadwal Dokter</h3>
+                    <p>Sesuaikan jadwal dokter untuk waktu yang lebih pas</p>
+                </a>
   </div>
 </section>
 
@@ -189,7 +180,7 @@
                     </div>
                 </div>
             </div>
-    
+
             <!-- Form Section -->
             <div class="col-md-8 p-4 form-section">
                 <form>
