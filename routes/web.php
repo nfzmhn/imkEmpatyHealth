@@ -30,8 +30,11 @@ Route::post('/beranda', [LoginController::class, 'beranda'])->name('login.proses
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 
 Route::get('/daftar', [LoginController::class, 'register'])->name('register');
-Route::post('/daftar', [LoginController::class, 'saveStepOne'])->name('register.step.one.post');
+Route::post('/datadiri', [LoginController::class, 'saveStepOne'])->name('register.step.one.post');
+Route::post('/login', [LoginController::class, 'saveStepTwo'])->name('register.step.two');
 Route::get('/datadiri', [LoginController::class, 'data_diri'])->name('datadiri');
+
+Route::get('/halaman-utama', [HalamanUtamaController::class, 'halamanutama'])->middleware('auth')->name('halamanutama');
 
 
 Route::get('/layanan', [ServiceController::class, 'index'])->name('layanan');

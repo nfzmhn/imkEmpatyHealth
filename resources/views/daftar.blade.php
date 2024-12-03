@@ -51,9 +51,9 @@
 
               <!-- Nomor Telepon -->
               <div class="input-wrap">
-                <input type="tel" name="no_hp" class="input-field" value="{{ old('no_hp') }}" required placeholder="Nomor Telepon" />
+                <input type="tel" name="no_telp" class="input-field" value="{{ old('no_telp') }}" required placeholder="Nomor Telepon" />
                 <small class="note">Nomor WhatsApp aktif</small>
-                @error('no_hp') <small class="error">{{ $message }}</small> @enderror
+                @error('no_telp') <small class="error">{{ $message }}</small> @enderror
               </div>
 
               <!-- Tanggal Lahir -->
@@ -66,12 +66,8 @@
                 @error('tgl_lahir') <small class="error">{{ $message }}</small> @enderror
               </div>
 
-<<<<<<< HEAD
               <!-- Tombol Submit -->
               <button type="submit" class="sign-btn">Sign Up</button>
-=======
-              <button type="submit" class="sign-btn">Lengkapi data diri</button>
->>>>>>> 9caa69230c2925c3e169ea596a286d23c328bc50
 
               <!-- Link ke Halaman Login -->
               <div class="to-signup">

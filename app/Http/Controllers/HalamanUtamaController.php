@@ -11,7 +11,8 @@ use Illuminate\Support\Facades\Hash;
 
 class HalamanUtamaController extends Controller
 {
-    // public function buatjanji() {
-    //     return view('buatjanji');
-    // }
+    public function halamanutama()
+    {
+        return view('halamanutama');
+    }
 }
