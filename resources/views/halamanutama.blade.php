@@ -1,4 +1,3 @@
-
 @extends("layouts.frontend")
 @section("content")
 <!DOCTYPE html>
@@ -126,11 +125,13 @@
       <p>Buat janji dengan mudah dan bebas antre</p>
     </div>
     </a>
+    <a href="{{ url('/rekam-medis')}}" class="text-decoration-none">
     <div class="service-box" id="cek-lab">
-      <img src="{{ asset('lg/img/ceklab.png') }}" alt="Cek Laboratorium">
-      <h3>Cek Laboratorium</h3>
-      <p>Cek lab tanpa ribet hanya dengan beberapa ketukan jari</p>
+        <img src="{{ asset('lg/img/ceklab.png') }}" alt="Cek Laboratorium">
+        <h3>Cek Laboratorium</h3>
+        <p>Cek lab tanpa ribet hanya dengan beberapa ketukan jari</p>
     </div>
+</a>
     <!-- <div class="service-box" id="konsultasi-online">
       <img src="{{ asset('lg/img/konsul.png') }}" alt="Konsultasi Online">
       <h3>Konsultasi Online</h3>
@@ -189,7 +190,7 @@
                     </div>
                 </div>
             </div>
-    
+
             <!-- Form Section -->
             <div class="col-md-8 p-4 form-section">
                 <form>

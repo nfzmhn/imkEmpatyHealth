@@ -12,7 +12,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
     <div class="container">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="/halaman-utama">
             <img src="{{ asset('lg/img/Logo medybudy.png') }}" alt="Klinik Pratama" class="navLogo"> KLINIK PRATAMA
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar">
@@ -20,16 +20,23 @@
         </button>
         <div class="collapse navbar-collapse" id="navbar">
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="#home">Beranda</a></li>
-                <li class="nav-item"><a class="nav-link" href="#artikel">Artikel</a></li>
-                <li class="nav-item"><a class="nav-link" href="../service/service.html">Layanan</a></li>
-                <li class="nav-item"><a class="nav-link" href="#kontak">Kontak</a></li>
+                <li class="nav-item"><a class="nav-link" href="/halaman-utama">Beranda</a></li>
+                <li class="nav-item"><a class="nav-link" href="/halaman-utama#artikel">Artikel</a></li>
+                <li class="nav-item"><a class="nav-link" href="/halaman-utama#layanan">Layanan</a></li>
+                <li class="nav-item"><a class="nav-link" href="/halaman-utama#kontak">Kontak</a></li>
                 <li class="nav-item">
-                    <a class="nav-link d-flex align-items-center" href="../profiluser/profiluser.html">
-                        <p class="mb-0">Tuan Zidni Nurfauzi</p>
-                        <img src="../lg/img/Ellipse 8.png" class="rounded-circle user-icon ms-2">
-                    </a>
-                </li>
+                        <li class="nav-item">
+    <a class="nav-link d-flex align-items-center" href="/profileuser">
+        <p class="mb-0">
+            @auth
+                {{ Auth::user()->nama_depan }} {{ Auth::user()->nama_belakang }}
+            @else
+                Guest
+            @endauth
+        </p>
+        <img src="{{ asset('lg/img/Ellipse 8.png') }}" class="rounded-circle user-icon ms-2">
+    </a>
+</li>
             </ul>
         </div>
     </div>

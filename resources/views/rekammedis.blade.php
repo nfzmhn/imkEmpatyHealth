@@ -1,3 +1,5 @@
+@extends("layouts.frontend")
+@section("content")
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,7 +18,7 @@
     <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">
-                
+
                 <img src="{{ asset('lg/img/Logo medybudy.png') }}" alt="Klinik Pratama" class="navlogo"> KLINIK PRATAMA
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -53,7 +55,7 @@
               </div>
             </div>
           </section>
-          
+
           <section class="history-section">
             <h2>Riwayat Pasien</h2>
             <div class="history-card">
@@ -101,13 +103,13 @@
               </div>
               <button class="forum-btn" data-link="{{ url('/chatbox')}}">Masuk Forum</button>
             </div>
-          </section>          
+          </section>
       </main>
 
       <footer class="footer">
         <div class="next-btn">&rarr;</div>
       </footer>
-      
+
       <script src="{{ asset('rekammedis/rekammedis.js') }}"></script>
 </body>
 </html>

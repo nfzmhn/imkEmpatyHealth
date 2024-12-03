@@ -7,6 +7,8 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\HalamanUtamaController;
 use App\Http\Controllers\JanjiController;
 use App\Http\Controllers\JadwalController;
+use App\Http\Controllers\RekamController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -45,3 +47,5 @@ Route::post('/logout', [ProfileController::class, 'logout'])->name('logout');
 Route::get('/janji', [JanjiController::class, 'janji'])->name('janji');
 
 Route::get('/jadwal', [JadwalController::class, 'jadwal'])->name('jadwal');
+Route::get('/rekam-medis', [RekamController::class, 'rekammedis'])->name('rekammedis');
+
