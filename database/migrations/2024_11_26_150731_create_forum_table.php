@@ -11,16 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('dokters', function (Blueprint $table) {
-            $table->id();
-            $table->string('nama');
-            $table->text('alamat');
-            $table->integer('umur');
-            $table->enum('jenis_kelamin', ['Laki-laki', 'Perempuan']);
-            $table->enum('status_pernikahan', ['Sudah', 'Belum', 'Cerai']);
-            $table->enum('latar_belakang', ['Rendah', 'Menengah', 'Atas']);
+        Schema::create('forum', function (Blueprint $table) {
+            $table->id('id_forum');
+            $table->string('nama_forum');
             $table->unsignedBigInteger('id_spesialis');
-
             $table->timestamps();
 
             $table->foreign('id_spesialis')->references('id_spesialis')->on('spesialis')->onDelete('cascade');
@@ -32,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('dokters');
+        Schema::dropIfExists('forum');
     }
 };

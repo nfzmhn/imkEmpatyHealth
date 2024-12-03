@@ -5,16 +5,12 @@ function redirectToMain(event) {
 
 document.querySelector(".toggle").addEventListener("click", function(event) {
   event.preventDefault();
-  window.location.href = '{{ route("daftar") }}';
+  window.location.href = '{{ route('register') }}';
 });
 
-<<<<<<< Updated upstream
-=======
 function signInWithGoogle() {
   alert("Fungsi Sign in with Google belum tersedia.");
 }
- 
->>>>>>> Stashed changes
 document.addEventListener("DOMContentLoaded", function () {
     const submit = document.querySelector(".sign-btn");
     submit.addEventListener("click", function () {

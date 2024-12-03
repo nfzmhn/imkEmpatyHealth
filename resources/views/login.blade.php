@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login/Klinik Pratama</title>
   <link rel="stylesheet" href="{{ asset('lg/login/login.css') }}">
 </head>
+
 <body>
   <main>
     <div class="box">
@@ -15,14 +17,14 @@
             <img src="{{ asset('lg/img/Logo medybudy.png') }}" alt="Logo medybudy">
           </div>
           <form class="sign-in-form" action="{{ route('login.proses') }}" method="POST">
-            @csrf 
-            
+            @csrf
+
             <div class="heading">
-            @if ($errors->has('login_failed'))
+              @if ($errors->has('login_failed'))
               <p style="color: red; font-size: 18px; font-weight: bold; margin-top: 10px;">
                 {{ $errors->first('login_failed') }}
               </p>
-            @endif
+              @endif
 
               <h2>Masuk</h2>
             </div>
@@ -30,37 +32,33 @@
 
             <div class="actual-form">
               <div class="input-wrap">
-                <input 
-                  type="email" 
+                <input
+                  type="email"
                   class="input-field"
                   name="email"
                   autocomplete="off"
                   required
-                  placeholder="Email"
-                />
+                  placeholder="Email" />
               </div>
               <div class="input-wrap">
-                <input 
-                  type="password" 
+                <input
+                  type="password"
                   minlength="4"
                   class="input-field"
-                  name="password" 
+                  name="password"
                   autocomplete="off"
                   required
-                  placeholder="Password"
-                />
+                  placeholder="Password" />
               </div>
               <p class="text">
                 <a href="#">Lupa Password</a>
               </p>
               <input type="submit" value="Log In" class="sign-btn">
               <div class="to-signup">
-                <!-- Ini gatau kenapa, jadi harus dipanggil dlu -->
-                <a href="{{ route('register') }}" class="toggle"></a>
                 <p>Belum punya akun? <a href="{{ route('register') }}" class="toggle">Daftar disini!</a></p>
               </div>
             </div>
-        </form>
+          </form>
         </div>
       </div>
       <div class="icons"></div>
@@ -71,4 +69,5 @@
   <!-- js file -->
   <script src="{{ asset('lg/login/login.js') }}"></script>
 </body>
+
 </html>

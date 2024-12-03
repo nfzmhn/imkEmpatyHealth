@@ -10,71 +10,91 @@ use Laravel\Sanctum\HasApiTokens;
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
+    // Menentukan nama tabel jika berbeda dengan konvensi Laravel
+    protected $table = 'users';
 
     /**
-     * The primary key associated with the table.
+     * Tentukan kolom primary key yang digunakan.
      *
      * @var string
      */
-    protected $primaryKey = 'id_user';
+    protected $primaryKey = 'id';  // Gunakan 'id_user' jika itu adalah nama primary key Anda
 
     /**
-     * Indicates if the IDs are auto-incrementing.
+     * Menentukan apakah ID otomatis bertambah.
      *
      * @var bool
      */
     public $incrementing = true;
 
     /**
-     * The attributes that are mass assignable.
+     * Tentukan kolom yang bisa diisi secara mass-assignment.
      *
-     * @var array<int, string>
+     * @var array
      */
     protected $fillable = [
-        'nama',
+        'nama_depan',
+        'nama_belakang',
+        'no_telp',
+        'umur',
+        'alamat',
+        'pendidikan_terakhir',
+        'status_pernikahan',
+        'pekerjaan',
+        'penghasilan',
+        'tunjangan',
         'email',
-        'pw',
-        'no_identitas',
-        'tgl_lahir',
-        'no_hp',
+        'password',  // Pastikan nama kolom password sesuai dengan yang ada di database
+        'jenis_kelamin',
     ];
 
     /**
-     * The attributes that should be hidden for serialization.
+     * Tentukan kolom yang harus disembunyikan saat serialisasi (misalnya saat JSON).
      *
-     * @var array<int, string>
+     * @var array
      */
     protected $hidden = [
-        'pw',
+        'password',  // Kolom password harus disembunyikan agar tidak terlihat di output
         'remember_token',
     ];
 
     /**
-     * The attributes that should be cast.
+     * Tentukan atribut yang harus di-cast (misalnya menjadi tipe datetime).
      *
-     * @var array<string, string>
+     * @var array
      */
     protected $casts = [
-        'email_verified_at' => 'datetime',
+        'email_verified_at' => 'datetime',  // Pastikan kolom email_verified_at ada di tabel 'users'
     ];
 
     /**
-     * Mutator to hash password when setting.
+     * Mutator untuk mengenkripsi password sebelum menyimpannya di database.
      *
      * @param string $value
      */
     public function setPasswordAttribute($value)
     {
-        $this->attributes['pw'] = bcrypt($value);
+        $this->attributes['password'] = bcrypt($value);  // Menggunakan bcrypt untuk mengenkripsi password
     }
 
     /**
-     * Accessor to use 'pw' as the password attribute for Auth.
+     * Akses password yang terenkripsi untuk keperluan autentikasi.
      *
      * @return string
      */
     public function getAuthPassword()
     {
-        return $this->pw;
+        return $this->password;  // Mengembalikan password yang terenkripsi
+    }
+
+    /**
+     * Menentukan hubungan One-to-Many dengan model Reservasi
+     * Satu User dapat memiliki banyak reservasi.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function reservasi()
+    {
+        return $this->hasMany(Reservasi::class, 'id_user', 'id');
     }
 }

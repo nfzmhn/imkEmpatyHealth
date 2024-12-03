@@ -1,12 +1,17 @@
-function redirectToLogin(event) {
-    event.preventDefault(); 
-    window.location.href = '{{ route("login") }}';
-  }
-  
-  document.addEventListener("DOMContentLoaded", function () {
-    const submit = document.querySelector(".sign-btn");
-
-    submit.addEventListener("click", function () {
-      window.location.href = "../datadiri/datadiri.html"; 
+document.addEventListener("DOMContentLoaded", function () {
+  // Redirect ke halaman login jika link diklik
+  const loginLink = document.querySelector(".toggle");
+  if (loginLink) {
+    loginLink.addEventListener("click", function (event) {
+      // Redirect dikelola oleh route href, tidak perlu JS tambahan
     });
-  });
+  }
+
+  // Form submission
+  const submitButton = document.querySelector(".sign-btn");
+  if (submitButton) {
+    submitButton.addEventListener("click", function () {
+      console.log("Form submitted to server.");
+    });
+  }
+});

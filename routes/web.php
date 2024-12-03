@@ -30,7 +30,8 @@ Route::post('/beranda', [LoginController::class, 'beranda'])->name('login.proses
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 
 Route::get('/daftar', [LoginController::class, 'register'])->name('register');
-Route::post('daftar', [LoginController::class, 'register_proses'])->name('register.proses');
+Route::post('/daftar', [LoginController::class, 'saveStepOne'])->name('register.step.one.post');
+Route::get('/datadiri', [LoginController::class, 'data_diri'])->name('datadiri');
 
 
 Route::get('/layanan', [ServiceController::class, 'index'])->name('layanan');
@@ -41,4 +42,3 @@ Route::post('/logout', [ProfileController::class, 'logout'])->name('logout');
 Route::get('/janji', [JanjiController::class, 'janji'])->name('janji');
 
 Route::get('/jadwal', [JadwalController::class, 'jadwal'])->name('jadwal');
-

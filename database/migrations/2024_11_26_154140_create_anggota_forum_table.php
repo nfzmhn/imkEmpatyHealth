@@ -11,18 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('reservasi', function (Blueprint $table) {
-            $table->id('id_reservasi');
+        Schema::create('anggota_forum', function (Blueprint $table) {
+            $table->id('id_anggota_forum');
             $table->unsignedBigInteger('id_user');
             $table->unsignedBigInteger('id_dokter');
-            $table->unsignedBigInteger('id_jadwal_dokter');
-            $table->text('keluhan');
             $table->timestamps();
 
-            // Foreign key constraints
             $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('id_dokter')->references('id')->on('dokters')->onDelete('cascade');
-            $table->foreign('id_jadwal_dokter')->references('id_jadwal_dokter')->on('jadwal_dokters')->onDelete('cascade');
         });
     }
 
@@ -31,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('reservasi');
+        Schema::dropIfExists('anggota_forum');
     }
 };

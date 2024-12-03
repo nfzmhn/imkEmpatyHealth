@@ -15,11 +15,11 @@ return new class extends Migration
             $table->id('id_jadwal_dokter');
             $table->unsignedBigInteger('id_dokter');
             $table->string('nama_jadwal');
-            $table->integer('durasi_tindakan');
+            $table->string('jadwal');
             $table->timestamps();
 
             // Foreign key constraint
-            $table->foreign('id_dokter')->references('id_dokter')->on('dokters')->onDelete('cascade');
+            $table->foreign('id_dokter')->references('id')->on('dokters')->onDelete('cascade');
         });
     }
 
