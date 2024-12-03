@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rekam Medis</title>
+    <title>Medy Budy</title>
     <!-- <link rel="stylesheet" href="{{ asset('buatjanji/buatjanji.css') }}"> -->
 
     <link rel="stylesheet" href="{{ asset ('rekammedis/rekammedis.css') }}">
