@@ -13,8 +13,8 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
     <div class="container">
         <a class="navbar-brand" href="/halaman-utama">
-            <img src="{{ asset('lg/img/Logo medybudy.png') }}" alt="Klinik Pratama" class="navLogo"> KLINIK PRATAMA
-        </a>
+            <img src="{{ asset('lg/img/Logo medybudy.png') }}" alt="Simpatico Health" class="navLogo"> Simpatico Health
+ </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -22,7 +22,7 @@
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item"><a class="nav-link" href="/halaman-utama">Beranda</a></li>
                 <li class="nav-item"><a class="nav-link" href="/halaman-utama#artikel">Artikel</a></li>
-                <li class="nav-item"><a class="nav-link" href="/halaman-utama#layanan">Layanan</a></li>
+                <li class="nav-item"><a class="nav-link" href="/halaman-utama#services">Layanan</a></li>
                 <li class="nav-item"><a class="nav-link" href="/halaman-utama#kontak">Kontak</a></li>
                 <li class="nav-item">
                         <li class="nav-item">
