@@ -118,12 +118,12 @@
     <section class="services" id="services">
   <h1>We offer several services <br>To Improve Your Health</h1>
   <div class="services-container">
-    <a href="{{ url('/janji') }}" style="text-decoration: none; color: inherit;" class="service-box" id="buat-janji">
+  <a href="{{ url('/janji') }}" style="text-decoration: none; color: inherit;" class="service-box" id="buat-janji">
                     <img src="{{ asset('lg/img/janjidok.png') }}" alt="Buat Janji Klinik">
                     <h3>Buat Janji Klinik</h3>
                     <p>Buat janji dengan mudah dan bebas antre</p>
                 </a>
-                <a href="{{ url('/rekammedis') }}" style="text-decoration: none; color: inherit;" class="service-box" id="rekam-medis">
+                <a href="{{ url('/rekam-medis') }}" style="text-decoration: none; color: inherit;" class="service-box" id="rekam-medis">
                     <img src="{{ asset('lg/img/ceklab.png') }}" alt="Cek Laboratorium">
                     <h3>Rekam Medis</h3>
                     <p>Lihat riwayat penyakit yang di alami</p>
