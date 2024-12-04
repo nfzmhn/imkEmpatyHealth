@@ -142,7 +142,7 @@ body {
 }
 /* sidebar */
 
-.chattbox {
+.chatbox {
     flex-grow: 1;
     height: 100%;
     overflow: hidden;
@@ -151,18 +151,18 @@ body {
         0 32px 64px -48px rgba(0, 0, 0, 0.5);
 }
 
-.chattbox header {
+.chatbox header {
     background: #067567;
     padding: 16px 0;
     text-align: center;
 }
 
-.chattbox header h2 {
+.chatbox header h2 {
     color: #e1dfdf;
     font-size: 1.4rem;
 }
 
-.chattbox .chatbox {
+.chatbox .chatbox {
     flex: 1;
     overflow-y: auto;
     padding: 30px 20px 70px;
@@ -202,7 +202,7 @@ body {
     padding-bottom: 2%;
 }
 
-.chattbox .chat-input {
+.chatbox .chat-input {
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -236,3 +236,23 @@ body {
 .chat-input textarea:valid ~ span {
     visibility: visible;
 }
+
+/* Default untuk layar besar */
+.chatbox {
+    flex-grow: 1;
+    height: 100%;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 0 128px 0 rgba(0, 0, 0, 0.1),
+        0 32px 64px -48px rgba(0, 0, 0, 0.5);
+    max-width: 100%;
+}
+
+/* Untuk layar kecil seperti Android */
+@media (max-width: 768px) {
+    .chatbox {
+        height: 100vh; /* Sesuaikan tinggi */
+        width: 100vw; /* Sesuaikan lebar */
+    }
+
+
