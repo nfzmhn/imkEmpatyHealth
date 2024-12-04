@@ -2,6 +2,7 @@
 @section("content")
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +13,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <section class="header-title">
         <h1>REGISTRASI<br>JANJI KLINIK</h1>
@@ -21,37 +23,45 @@
         <div class="buatjanji">
             <div class="form-container">
                 <div class="left">
-                    <label for="spesialis">Pilih Spesialis Dokter</label>
-                    <select id="spesialis">
-                        <option>Pilih Spesialis Dokter</option>
+                    <!-- Form untuk memilih spesialis -->
+                    <form method="GET" action="{{ route('reservasi.index') }}">
+                        <select name="spesialis_id" id="spesialis" onchange="this.form.submit()">
+                            <option value="">Pilih Spesialis Dokter</option>
+                            @foreach ($spesialis as $item)
+                            <option value="{{ $item->id_spesialis }}" {{ request()->get('spesialis_id') == $item->id_spesialis ? 'selected' : '' }}>
+                                {{ $item->nama_spesialis }}
+                            </option>
+                            @endforeach
+                        </select>
+                    </form>
+
+                    <!-- Dropdown untuk memilih dokter -->
+                    <select name="dokter_id" id="dokter">
+                        <option>Pilih Dokter</option>
+                        @foreach ($dokters as $dokter)
+                        <option value="{{ $dokter->id }}">{{ $dokter->nama }}</option>
+                        @endforeach
                     </select>
 
-                    <label for="dokter">Pilih Dokter</label>
-                    <select id="dokter">
-                        <option>Select Option</option>
+                    <!-- Dropdown untuk memilih jadwal -->
+                    <select name="jadwal_id" id="jadwal">
+                        <option>Pilih Jadwal</option>
+                        @foreach ($jadwals as $jadwal)
+                        <option value="{{ $jadwal->id_jadwal_dokter }}">
+                            {{ $jadwal->nama_jadwal }} - {{ $jadwal->jadwal }}
+                        </option>
+                        @endforeach
                     </select>
 
-                    <label for="jadwal">Pilih Jadwal Dokter</label>
-                    <select id="jadwal">
-                        <option>Select Option</option>
-                    </select>
-
-                    <label for="jadwal">Pilih Jadwal Dokter</label>
-                    <div class="input-wrap">
-                        <input type="text" class="input-field" placeholder="Pilih Tanggal" onfocus="(this.type='date')"
-                            onblur="if(this.value===''){this.type='text'}" required />
+                    <div class="right">
+                        <label for="keluhan">Keluhan/Sakit yang dirasakan</label>
+                        <textarea name="keluhan" id="keluhan" placeholder="Jawaban Anda"></textarea>
+                        <button id="btn-submit" type="submit">Submit</button>
                     </div>
-
-                </div>
-                <div class="right">
-                    <label for="keluhan">Keluhan/Sakit yang dirasakan</label>
-                    <textarea id="keluhan" placeholder="Jawaban Anda"></textarea>
-                    <button id="btn-submit" type="submit">Submit</button>
                 </div>
             </div>
         </div>
     </section>
-
     <!-- Pop-up Modal -->
     <div id="popup" class="popup">
         <div class="popup-content">
