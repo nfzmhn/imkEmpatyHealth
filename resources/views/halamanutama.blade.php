@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Klinik Pratama</title>
+    <title>Medy Budy</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{asset ('halamanutama/halamanutama.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
@@ -128,12 +128,12 @@
                     <h3>Rekam Medis</h3>
                     <p>Lihat riwayat penyakit yang di alami</p>
                 </a>
-                <a href="{{ url ('/komunitasonline') }}" style="text-decoration: none; color: inherit;"class="service-box" id="konsultasi-online">
+                <a href="{{ url ('/komunitas-online') }}" style="text-decoration: none; color: inherit;"class="service-box" id="komunitas-online">
                     <img src="{{ asset('lg/img/konsul.png') }}" alt="Konsultasi Online">
                     <h3>Komunitas Online</h3>
                     <p>Konsultasi dengan dokter hanya dengan handphone</p>
                 </a>
-                <a href="{{ url('/jadwaldok') }}" style="text-decoration: none; color: inherit;" class="service-box" id="jadwal-dokter">
+                <a href="{{ url('/jadwal-dokter') }}" style="text-decoration: none; color: inherit;" class="service-box" id="jadwal-dokter">
                     <img src="{{ asset('lg/img/jadwaldok.png') }}" alt="Jadwal Dokter">
                     <h3>Jadwal Dokter</h3>
                     <p>Sesuaikan jadwal dokter untuk waktu yang lebih pas</p>

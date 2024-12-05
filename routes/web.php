@@ -8,6 +8,10 @@ use App\Http\Controllers\HalamanUtamaController;
 use App\Http\Controllers\JanjiController;
 use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\RekamController;
+use App\Http\Controllers\KomunitasController;
+use App\Http\Controllers\InformasiController;
+use App\Http\Controllers\ChatboxController;
+use App\Http\Controllers\ReservasiController;
 
 
 /*
@@ -44,8 +48,15 @@ Route::get('/layanan', [ServiceController::class, 'index'])->name('layanan');
 Route::get('/profileuser', [ProfileController::class, 'index'])->name('profileuser');
 Route::post('/logout', [ProfileController::class, 'logout'])->name('logout');
 
-Route::get('/janji', [JanjiController::class, 'janji'])->name('janji');
+Route::get('/get-dokters', [ReservasiController::class, 'getDokters'])->name('getDokters');
+Route::get('/janji', [ReservasiController::class, 'index'])->name('reservasi.index');
+Route::post('/janji', [ReservasiController::class, 'store'])->name('reservasi.store');
 
-Route::get('/jadwal', [JadwalController::class, 'jadwal'])->name('jadwal');
+Route::get('/jadwal-dokter', [JadwalController::class, 'jadwal'])->name('jadwal');
 Route::get('/rekam-medis', [RekamController::class, 'rekammedis'])->name('rekammedis');
 
+Route::get('/komunitas-online', [KomunitasController::class, 'komunitasonline'])->name('komunitasonline');
+
+Route::get('/informasi', [InformasiController::class, 'informasi'])->name('informasi');
+
+Route::get('/chat-box', [ChatboxController::class, 'chatbox'])->name('chatbox');

@@ -19,7 +19,7 @@
         <div class="container">
             <a class="navbar-brand" href="#">
 
-                <img src="{{ asset('lg/img/Logo medybudy.png') }}" alt="Klinik Pratama" class="navlogo"> KLINIK PRATAMA
+                <img src="{{ asset('lg/img/Logo medybudy.png') }}" alt="Simpatico Health" class="navlogo"> Simpatico Health
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -42,19 +42,27 @@
     </nav> -->
 
     <main class="main">
-        <section class="profile-section">
-            <div class="profile-box">
-              <div class="profile-info">
+    <section class="profile-section">
+        <div class="profile-box">
+            <div class="profile-info">
+                <!-- Gambar Profil -->
                 <div class="profile-pic">
-                  <img src="{{ asset('lg/img/Person.png') }}" alt="Profile">
+                    <img src="{{ Auth::user()->profile_picture ?? asset('lg/img/Person.png') }}" alt="Profile">
                 </div>
+
+                <!-- Detail Profil -->
                 <div class="profile-details">
-                  <h2 class="profile-name">Tuan Zidni Nurfauzi Mahen</h2>
-                  <p class="profile-id">0001266 - 22 Maret 2004</p>
+                    <!-- Nama Pengguna -->
+                    <h2 class="profile-name">{{ Auth::user()->nama_depan }} {{ Auth::user()->nama_belakang }}</h2>
+
+                    <!-- ID dan Umur Pengguna -->
+                    <p>ID: {{ Auth::user()->id }} || Umur: {{ Auth::user()->umur ?? 'Umur Tidak Tersedia' }} Tahun</p>
+
                 </div>
-              </div>
             </div>
-          </section>
+        </div>
+    </section>
+
 
           <section class="history-section">
             <h2>Riwayat Pasien</h2>
@@ -70,8 +78,8 @@
                 <p class="tanggal">12 MARET 2023</p>
                 <p class="jarak"><strong>dr. Pikmi</strong> | Spesialis THT</p>
                 <p class="jarak">Diagnosa : Gangguan Fungsi Telinga</p>
-              </div>{{ url('/profileuser') }}
-              <button class="forum-btn" data-link="{{ url('/chatbox')}}">Masuk Forum</button>
+              </div>
+              <button class="forum-btn" data-link="{{ url('/chat-box')}}">Masuk Forum</button>
             </div>
             <div class="history-card">
               <div class="history-date">
@@ -86,7 +94,7 @@
                 <p class="jarak"><strong>dr. Hary Suryapranata</strong> | Spesialis Jantung</p>
                 <p class="jarak">Diagnosa : Serangan Jantung Ringan</p>
               </div>
-              <button class="forum-btn" data-link="{{ url('/chatbox')}}">Masuk Forum</button>
+              <button class="forum-btn" data-link="{{ url('/chat-box')}}">Masuk Forum</button>
             </div>
             <div class="history-card">
               <div class="history-date">
@@ -101,7 +109,7 @@
                 <p class="jarak"><strong>dr. Ichsan Budiono</strong> | Spesialis Alergi</p>
                 <p class="jarak">Diagnosa : Alergi Debu</p>
               </div>
-              <button class="forum-btn" data-link="{{ url('/chatbox')}}">Masuk Forum</button>
+              <button class="forum-btn" data-link="{{ url('/chat-box')}}">Masuk Forum</button>
             </div>
           </section>
       </main>

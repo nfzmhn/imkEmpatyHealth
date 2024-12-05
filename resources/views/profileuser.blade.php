@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <link rel="stylesheet" href={{url("/lg/profileuser/profileuser.css")}}>
 
-  <title>medybudy</title>
+  <title>Profile User</title>
 </head>
 
     <!-- Home Section with Background Image -->

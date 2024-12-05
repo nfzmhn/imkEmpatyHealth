@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chatbox</title>
-    <link rel="stylesheet" href="{{ asset('chatbox/chatbox.css') }}">
+    <title>Medy Budy</title>
+    <link rel="stylesheet" href="{{ asset('../chatbox/chatbox.css') }}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 
-    
+
 </head>
 <body>
     <div class="container">
@@ -28,7 +28,7 @@
             </div>
             <div class="profile" id="profile">
               <img src="{{ asset('lg/img/Ellipse 8.png') }}" alt="Profile">
-              <span class="textSidebar">Zidni Nurfauzi</span>
+              <span class="textSidebar">{{ Auth::user()->nama_depan }} {{ Auth::user()->nama_belakang }}</span>
             </div>
             <div class="logout" id="logout">
                 <span class="material-symbols-outlined">logout</span>
@@ -39,14 +39,16 @@
     <!-- <button class="chatbot-toggle">
         <img src="../lg/img/Ellipse 8.png" alt="Profile">
     </button> -->
-    <div class="chattbox">
+    <div class="chatbox">
        <header>
         <h2>Chatbox</h2>
-       </header> 
+       </header>
        <ul class="chatbox">
         <li class="chat incoming">
-            <img src="{{ asset('lg/img/Ellipse 8.png') }}g" alt="Profile">
-            <p>Semangat ya <br>kita semua pasti sembuh!!!</p>
+            <img src="../lg/img/Ellipse 8.png" alt="Profile">
+            <p><span class="username">User 1</span>
+              <br>Semangat ya <br>kita semua pasti sembuh!!!
+            </p>
         </li>
        </ul>
        <div class="chat-input">
@@ -58,3 +60,4 @@
     <script src="{{ asset('chatbox/chatbox.js') }}"></script>
 </body>
 </html>
+

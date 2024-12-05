@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Service</title>
+  <title>Medy Budy</title>
   <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
@@ -19,7 +19,7 @@
     <nav class="navbar">
       <a href="{{ url('/halamanutama#home') }}" class="active">Beranda</a>
       <a href="{{ url('/halamanutama#artikel') }}">Artikel</a>
-      <a href="{{ url('/halamanutama#services') }}">Layanan</a>
+      <a href="#layanan">Layanan</a>
       <a href="{{ url('/halamanutama#kontak') }}">Kontak</a>
     </nav>
     <div class="user-profile">

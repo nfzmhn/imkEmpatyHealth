@@ -23,23 +23,23 @@ document.addEventListener("DOMContentLoaded", function () {
       iconExpanded.style.display = "none";
     }
   });
-  
+
   // Navigasi ke halaman dashboard
   dashboard.addEventListener("click", function () {
-      window.location.href = "../halamanutama/halamanutama.html"; // URL tujuan
+      window.location.href = "../halaman-utama"; // URL tujuan
   });
   // Navigasi ke halaman Group Chat
   groupChat.addEventListener("click", function () {
-      window.location.href = "../komunitasonline/komunitasonline.html"; 
+      window.location.href = "../komunitas-online";
   });
   // Navigasi ke halaman Profile
   profile.addEventListener("click", function () {
-      window.location.href = "#"; 
+      window.location.href = "../profileuser";
   });
   logout.addEventListener("click", function () {
-      window.location.href = "../lg/index.html"; 
+      window.location.href = "../";
   })
- 
+
   let userMessage;
 
   const createChatLi = (message, className) => {
