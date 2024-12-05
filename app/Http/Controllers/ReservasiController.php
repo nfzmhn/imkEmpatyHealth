@@ -2,11 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Log;
 use App\Models\Dokter;
 use App\Models\Spesialis;
 use App\Models\User;
+use App\Models\Reservasi;
 use App\Models\JadwalDokter;
 use Illuminate\Http\Request;
+
+
 
 class ReservasiController extends Controller
 {
@@ -39,35 +43,39 @@ class ReservasiController extends Controller
     public function getDokters(Request $request)
     {
         $dokters = Dokter::where('id_spesialis', $request->get('spesialis_id'))->get();
-        \Log::info('Dokters fetched:', $dokters->toArray());
-        \Log::info('Spesialis ID:', $request->get('spesialis_id'));
+        Log::info('Dokters fetched:', $dokters->toArray());
+        Log::info('Spesialis ID:', $request->get('spesialis_id'));
         return response()->json($dokters);
     }
 
     // Menyimpan data reservasi baru
     public function store(Request $request)
     {
-        // Validasi input
+        Log::info('Input diterima:', $request->all());
+    
         $validated = $request->validate([
-            'spesialis_id' => 'required|exists:spesialis,id_spesialis',
-            'dokter_id'    => 'required|exists:dokters,id',
-            'jadwal_id'    => 'required|exists:jadwal_dokters,id_jadwal_dokter',
-            'tanggal'      => 'required|date',
+            'id_user'      => 'required|exists:users,id',
+            'id_dokter'    => 'required|exists:dokters,id',
+            'id_jadwal_dokter' => 'required|exists:jadwal_dokters,id',
             'keluhan'      => 'required|string',
         ]);
-
-        // Simpan data reservasi
-        $reservasi = new Reservasi();
-        $reservasi->id_user = auth()->id(); // Ambil ID user yang sedang login
-        $reservasi->id_dokter = $request->dokter_id;
-        $reservasi->id_jadwal_dokter = $request->jadwal_id;
-        $reservasi->tanggal = $request->tanggal;
-        $reservasi->keluhan = $request->keluhan;
-        $reservasi->save();
-
-        return redirect()->route('reservasi.index')->with('success', 'Reservasi berhasil dibuat!');
-    }
-
+    
+        Log::info('Data tervalidasi:', $validated);
+    
+        try {
+            Reservasi::create([
+                'id_user' => $request->id_user,
+                'id_dokter' => $request->id_dokter,
+                'id_jadwal_dokter' => $request->id_jadwal_dokter,
+                'keluhan' => $request->keluhan,
+            ]);
+            return redirect()->route('reservasi.index')->with('success', 'Reservasi berhasil dibuat!');
+        } catch (\Exception $e) {
+            Log::error('Error saat menyimpan reservasi:', ['error' => $e->getMessage()]);
+            return back()->withErrors('Terjadi kesalahan. Silakan coba lagi.');
+        }
+    }    
+    
     // Fungsi untuk menghitung skor kecocokan dokter dan user
     private function getMatchingScore(Dokter $dokter, User $user)
     {

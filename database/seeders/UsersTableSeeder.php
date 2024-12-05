@@ -10,29 +10,41 @@ class UsersTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
-     *
-     * @return void
      */
-    public function run()
+    public function run(): void
     {
         DB::table('users')->insert([
             [
-                'nama' => 'Ali Mahendra',
-                'email' => 'ali@example.com',
-                'pw' => Hash::make('password123'),
-                'no_identitas' => '123456789',
-                'tgl_lahir' => '1988-03-14',
-                'no_hp' => '08123456789',
+                'nama_depan' => 'Eko',
+                'nama_belakang' => 'Prasetyo',
+                'no_telp' => '081234567890',
+                'umur' => 28,
+                'alamat' => 'Jl. Merdeka, Jakarta, Indonesia',
+                'pendidikan_terakhir' => 'Perguruan Tinggi',
+                'status_pernikahan' => 'Belum',
+                'pekerjaan' => 'Software Engineer',
+                'penghasilan' => 'Atas',
+                'tunjangan' => 'BPJS',
+                'email' => 'eko@example.com',
+                'password' => Hash::make('password123'),
+                'jenis_kelamin' => 'Laki-laki',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
-                'nama' => 'Dewi Ayu',
-                'email' => 'dewi@example.com',
-                'pw' => Hash::make('password123'),
-                'no_identitas' => '987654321',
-                'tgl_lahir' => '1992-06-22',
-                'no_hp' => '08123456780',
+                'nama_depan' => 'Siti',
+                'nama_belakang' => 'Rahmawati',
+                'no_telp' => '081234567891',
+                'umur' => 32,
+                'alamat' => 'Jl. Sudirman, Bandung, Indonesia',
+                'pendidikan_terakhir' => 'SLTA',
+                'status_pernikahan' => 'Sudah',
+                'pekerjaan' => 'Guru',
+                'penghasilan' => 'Menengah',
+                'tunjangan' => 'Asuransi',
+                'email' => 'siti@example.com',
+                'password' => Hash::make('password456'),
+                'jenis_kelamin' => 'Perempuan',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],

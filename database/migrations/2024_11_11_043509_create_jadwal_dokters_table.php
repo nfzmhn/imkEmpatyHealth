@@ -16,6 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('id_dokter');
             $table->string('nama_jadwal');
             $table->string('jadwal');
+            $table->integer('durasi_tindakan'); // Menambahkan kolom durasi_tindakan
             $table->timestamps();
 
             // Foreign key constraint

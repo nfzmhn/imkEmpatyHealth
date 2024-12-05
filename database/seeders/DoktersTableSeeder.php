@@ -9,33 +9,41 @@ class DoktersTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
-     *
-     * @return void
      */
-    public function run()
+    public function run(): void
     {
+        DB::table('dokters')->delete();
         DB::table('dokters')->insert([
             [
-                'nama_dokter' => 'Dr. Budi Santoso',
-                'id_spesialis' => 1,
-                'hari' => 'Senin',
-                'no_telepon' => '081122334455',
+                'nama' => 'Dr. Budi Santoso',
+                'alamat' => 'Jl. Mawar No. 123, Jakarta',
+                'umur' => 45,
+                'jenis_kelamin' => 'Laki-laki',
+                'status_pernikahan' => 'Sudah',
+                'latar_belakang' => 'Atas',
+                'id_spesialis' => 1, // Asumsi ID spesialis valid di tabel spesialis
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
-                'nama_dokter' => 'Dr. Sari Pertiwi',
-                'id_spesialis' => 2,
-                'hari' => 'Selasa',
-                'no_telepon' => '081133445566',
+                'nama' => 'Dr. Sari Pertiwi',
+                'alamat' => 'Jl. Melati No. 456, Bandung',
+                'umur' => 38,
+                'jenis_kelamin' => 'Perempuan',
+                'status_pernikahan' => 'Sudah',
+                'latar_belakang' => 'Menengah',
+                'id_spesialis' => 2, // Asumsi ID spesialis valid di tabel spesialis
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
-                'nama_dokter' => 'Dr. Andi Wijaya',
-                'id_spesialis' => 1,
-                'hari' => 'Rabu',
-                'no_telepon' => '081144556677',
+                'nama' => 'Dr. Andi Wijaya',
+                'alamat' => 'Jl. Anggrek No. 789, Surabaya',
+                'umur' => 50,
+                'jenis_kelamin' => 'Laki-laki',
+                'status_pernikahan' => 'Cerai',
+                'latar_belakang' => 'Atas',
+                'id_spesialis' => 1, // Asumsi ID spesialis valid di tabel spesialis
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
