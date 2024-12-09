@@ -11,6 +11,8 @@ class Spesialis extends Model
 
     // Menentukan nama tabel yang digunakan oleh model
     protected $table = 'spesialis';
+    protected $primaryKey = 'id_spesialis';
+
 
     // Menentukan kolom yang boleh diisi (mass assignable)
     protected $fillable = ['nama_spesialis'];

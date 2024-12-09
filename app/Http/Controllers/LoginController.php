@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Users;
 use App\Models\User;
 
 class LoginController extends Controller
@@ -39,7 +40,6 @@ class LoginController extends Controller
         }
     }
 
-
     public function register()
     {
         return view('daftar');
@@ -56,7 +56,6 @@ class LoginController extends Controller
             'tgl_lahir' => 'required|date',
         ]);
 
-
         // Simpan ke session
         session(['step_one_data' => $validatedData]);
 
@@ -70,6 +69,7 @@ class LoginController extends Controller
         return view('datadiri');
     }
 
+    // Simpan data lengkap ke database
     public function saveStepTwo(Request $request)
     {
         // Validasi data dari step 2
@@ -97,7 +97,6 @@ class LoginController extends Controller
         // Gabungkan data dari step one dan step two
         $userData = array_merge($stepOneData, $validatedData);
 
-        // Simpan data ke database
         try {
             // Pastikan kolom yang dikirimkan sesuai dengan nama kolom di tabel users
             User::create([
@@ -116,7 +115,6 @@ class LoginController extends Controller
                 'penghasilan' => $userData['penghasilan'],
                 'tunjangan' => $userData['tunjangan'],
             ]);
-
             // Menampilkan pesan jika data berhasil disimpan
             //dd('Data berhasil disimpan');
         } catch (\Exception $e) {
