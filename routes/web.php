@@ -12,6 +12,10 @@ use App\Http\Controllers\KomunitasController;
 use App\Http\Controllers\InformasiController;
 use App\Http\Controllers\ChatboxController;
 use App\Http\Controllers\ReservasiController;
+use App\Http\Controllers\LoginDokterController;
+use App\Http\Controllers\DiagnosaController;
+use App\Http\Controllers\DokterController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -36,6 +40,12 @@ Route::get('/daftar', [LoginController::class, 'register'])->name('register');
 Route::post('/datadiri', [LoginController::class, 'saveStepOne'])->name('register.step.one.post');
 Route::post('/login', [LoginController::class, 'saveStepTwo'])->name('register.step.two');
 Route::get('/datadiri', [LoginController::class, 'data_diri'])->name('datadiri');
+Route::post('/logindokter', [LoginDokterController::class, 'login'])->name('dokter.login');
+Route::get('/logindokter', [LoginDokterController::class, 'showLoginForm'])->name('dokter.loginForm');
+Route::get('/views/dokter', [DokterController::class, 'pasiendokter'])->name('dokter');
+Route::get('/diagnosa', [DiagnosaController::class, 'index'])->name('diagnosa');
+
+
 
 // Halaman utama setelah login
 Route::get('/halaman-utama', [HalamanUtamaController::class, 'halamanutama'])->middleware('auth')->name('halamanutama');
@@ -54,7 +64,7 @@ Route::get('/get-dokters', [ReservasiController::class, 'getDokters'])->name('re
 Route::get('/get-jadwal-dokter', [ReservasiController::class, 'getJadwalDokter']);
 
 // Jadwal Dokter
-Route::get('/jadwal-dokter', [JadwalController::class, 'jadwal'])->name('jadwal');
+Route::get('/jadwal-dokter', [JadwalController::class, 'index'])->name('jadwal.dokter');
 
 // Rekam Medis
 Route::get('/rekam-medis', [RekamController::class, 'rekammedis'])->name('rekammedis');

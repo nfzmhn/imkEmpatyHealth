@@ -16,6 +16,8 @@ return new class extends Migration
             $table->string('nama');
             $table->text('alamat');
             $table->integer('umur');
+            $table->string('email')->unique();
+            $table->string('password');
             $table->enum('jenis_kelamin', ['Laki-laki', 'Perempuan']);
             $table->enum('status_pernikahan', ['Sudah', 'Belum', 'Cerai']);
             $table->enum('latar_belakang', ['Rendah', 'Menengah', 'Atas']);

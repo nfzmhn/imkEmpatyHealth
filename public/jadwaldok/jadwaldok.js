@@ -1,12 +1,7 @@
 function showCategory(category) {
-    // Hide both sections
-    document.getElementById('spesialis').style.display = 'none';
-    document.getElementById('umum').style.display = 'none';
+    document.querySelectorAll('.doctor-category').forEach(cat => {
+        cat.style.display = 'none';
+    });
 
-    // Show the selected section
-    if (category === 'spesialis') {
-        document.getElementById('spesialis').style.display = 'block';
-    } else if (category === 'umum') {
-        document.getElementById('umum').style.display = 'block';
-    }
+    document.getElementById(category).style.display = 'block';
 }

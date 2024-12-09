@@ -12,19 +12,17 @@
     <div class="login-container">
         <div class="login-card">
             <h2>Login</h2>
-            <form action="dashboard.html" method="POST">
+            <form action="{{ route('dokter.login') }}" method="POST">
+                @csrf
                 <div class="form-group">
-                    <label for="username">Username</label>
-                    <input type="text" id="username" name="username" placeholder="Enter your username" required>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
                 </div>
                 <div class="form-group">
                     <label for="password">Password</label>
                     <input type="password" id="password" name="password" placeholder="Enter your password" required>
                 </div>
-                <a type="submit" class="login-button" style="text-decoration: none;" href="{{ url('/dokter')}}">Login</a>
+                <button type="submit" class="login-button">Login</button>
             </form>
-        </div>
-    </div>
-</body>
-
-</html>
+        </body>
+        </html> 

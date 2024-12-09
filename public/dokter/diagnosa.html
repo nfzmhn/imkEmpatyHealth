@@ -65,9 +65,7 @@
 
             <div class="diagnosis">
                 <label>Input Diagnosa Pasien</label>
-                <select>
-                    <option value="">Diagnosa</option>
-                </select>
+                <textarea id="diagnosa" placeholder="Masukan Diagnosa"></textarea>
                 <button class="diagnosis-btn">Input Diagnosa</button>
             </div>
             

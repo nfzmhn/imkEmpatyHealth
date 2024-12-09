@@ -56,6 +56,7 @@
               <input type="submit" value="Log In" class="sign-btn">
               <div class="to-signup">
                 <p>Belum punya akun? <a href="{{ route('register') }}" class="toggle">Daftar disini!</a></p>
+                <p>Login Dokter <a href="{{ route('dokter.loginForm') }}" class="dokter-login-link">Masuk disini!</a></p>
               </div>
             </div>
           </form>
