@@ -27,6 +27,11 @@ class Reservasi extends Model
         return $this->belongsTo(Dokter::class, 'id_dokter', 'id'); // 'id' adalah kunci utama di tabel dokters
     }
 
+    public function spesialis()
+    {
+        return $this->belongsTo(Spesialis::class, 'id_spesialis','nama_spesialis');
+    }
+
     public function jadwalDokter()
     {
         return $this->belongsTo(JadwalDokter::class, 'id_jadwal_dokter', 'id_jadwal_dokter');
