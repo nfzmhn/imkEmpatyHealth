@@ -15,7 +15,7 @@ class Dokter extends Authenticatable
 
     // Menentukan kolom yang boleh diisi (mass assignable)
     protected $fillable = [
-        'nama', 
+        'nama',
         'alamat',
         'umur',
         'email',
@@ -39,9 +39,9 @@ class Dokter extends Authenticatable
 
     // Menentukan relasi dengan tabel Spesialis (Dokter memiliki satu spesialis)
     public function spesialis()
-    {
-        return $this->belongsTo(Spesialis::class, 'id_spesialis');
-    }
+{
+    return $this->belongsTo(Spesialis::class, 'id_spesialis', 'id_spesialis');
+}
 
     // Menentukan relasi dengan tabel JadwalDokter (Dokter memiliki banyak jadwal)
     public function jadwals()

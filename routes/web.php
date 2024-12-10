@@ -77,3 +77,7 @@ Route::get('/informasi', [InformasiController::class, 'informasi'])->name('infor
 
 // Chatbox
 Route::get('/chat-box', [ChatboxController::class, 'chatbox'])->name('chatbox');
+
+Route::get('/diagnosa', [DiagnosaController::class, 'index'])->name('diagnosa.index');
+Route::get('/form-pasien/{id}', [DiagnosaController::class, 'showForm'])->name('form.pasien');
+Route::post('/diagnosa/store/{id}', [DiagnosaController::class, 'storeDiagnosa'])->name('diagnosa.store');

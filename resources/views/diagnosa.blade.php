@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form Pasien</title> 
+    <title>Form Pasien</title>
     <link rel="stylesheet" href="{{ asset('dokter/diagnosa.css')}}">
 </head>
 
@@ -68,7 +68,7 @@
                 <textarea id="diagnosa" placeholder="Masukan Diagnosa"></textarea>
                 <button class="diagnosis-btn">Input Diagnosa</button>
             </div>
-            
+
         </form>
     </div>
 </body>
