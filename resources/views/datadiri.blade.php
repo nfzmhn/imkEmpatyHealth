@@ -92,7 +92,7 @@
         </div>
     </main>
 
-    <script src="{{ asset('datadiri/datadiri.js') }}"></script>
+    <script src="{{ asset('lg/datadiri/datadiri.js') }}"></script>
 </body>
 
 </html>

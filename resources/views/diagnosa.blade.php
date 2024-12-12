@@ -12,64 +12,64 @@
     <div class="container">
         <div class="header">
             <div class="profile">
-                <p>{{ date('d-m-Y') }}</p>
+                <h2>{{ $reservasi->user->nama_depan }} {{ $reservasi->user->nama_belakang }}</h2>
+                <p>{{ $reservasi->dokter->nama }} | {{ $reservasi->dokter->spesialis->nama_spesialis ?? 'Spesialisasi tidak tersedia' }}</p>
+                <p>{{ $reservasi->created_at->format('d-m-Y') }}</p>
             </div>
         </div>
 
-        @foreach ($reservasi as $data)
-        <form class="form" action="{{ route('diagnosa.store', $data->id) }}" method="POST">
+        <form class="form" method="POST" action="{{ route('diagnosa.store', ['id' => $reservasi->id_reservasi]) }}">
             @csrf
             <div class="row">
                 <div class="column">
                     <label>Jenis Kelamin</label>
-                    <input type="text" value="{{ $data->user->gender ?? 'Tidak diketahui' }}" readonly>
+                    <input type="text" value="{{ $reservasi->user->jenis_kelamin }}" readonly>
                 </div>
                 <div class="column">
                     <label>Pekerjaan</label>
-                    <input type="text" value="{{ $data->user->pekerjaan ?? 'Tidak diketahui' }}" readonly>
+                    <input type="text" value="{{ $reservasi->user->pekerjaan }}" readonly>
                 </div>
             </div>
 
             <div class="row">
                 <div class="column">
                     <label>Umur</label>
-                    <input type="text" value="{{ $data->user->umur ?? 'Tidak diketahui' }}" readonly>
+                    <input type="text" value="{{ $reservasi->user->umur }} Tahun" readonly>
                 </div>
                 <div class="column">
                     <label>Range Penghasilan</label>
-                    <input type="text" value="{{ $data->user->penghasilan ?? 'Tidak diketahui' }}" readonly>
+                    <input type="text" value="{{ $reservasi->user->penghasilan }}" readonly>
                 </div>
             </div>
 
             <div class="row">
                 <div class="column">
                     <label>Pendidikan Terakhir</label>
-                    <input type="text" value="{{ $data->user->pendidikan ?? 'Tidak diketahui' }}" readonly>
+                    <input type="text" value="{{ $reservasi->user->pendidikan_terakhir }}" readonly>
                 </div>
                 <div class="column">
                     <label>Tunjangan</label>
-                    <input type="text" value="{{ $data->user->tunjangan ?? 'Tidak diketahui' }}" readonly>
+                    <input type="text" value="{{ $reservasi->user->tunjangan }}" readonly>
                 </div>
             </div>
 
             <div class="row">
                 <div class="column">
                     <label>Status Perkawinan</label>
-                    <input type="text" value="{{ $data->user->status_perkawinan ?? 'Tidak diketahui' }}" readonly>
+                    <input type="text" value="{{ $reservasi->user->status_pernikahan }}" readonly>
                 </div>
                 <div class="column">
                     <label>Keluhan / Sakit yang dirasakan</label>
-                    <textarea readonly>{{ $data->keluhan }}</textarea>
+                    <textarea readonly>{{ $reservasi->keluhan }}</textarea>
                 </div>
             </div>
 
             <div class="diagnosis">
                 <label>Input Diagnosa Pasien</label>
-                <textarea name="diagnosa" id="diagnosa" placeholder="Masukkan Diagnosa" required></textarea>
-                <button type="submit" class="diagnosis-btn">Simpan Diagnosa</button>
+                <textarea name="diagnosa" id="diagnosa" placeholder="Masukan Diagnosa" required></textarea>
+                <button type="submit" class="diagnosis-btn">Input Diagnosa</button>
             </div>
         </form>
-        @endforeach
     </div>
 </body>
 

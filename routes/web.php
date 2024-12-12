@@ -7,7 +7,6 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\HalamanUtamaController;
 use App\Http\Controllers\JanjiController;
 use App\Http\Controllers\JadwalController;
-use App\Http\Controllers\RekamController;
 use App\Http\Controllers\KomunitasController;
 use App\Http\Controllers\InformasiController;
 use App\Http\Controllers\ChatboxController;
@@ -15,6 +14,7 @@ use App\Http\Controllers\ReservasiController;
 use App\Http\Controllers\LoginDokterController;
 use App\Http\Controllers\DiagnosaController;
 use App\Http\Controllers\DokterController;
+use App\Http\Controllers\RekamController;
 
 
 /*
@@ -77,7 +77,10 @@ Route::get('/informasi', [InformasiController::class, 'informasi'])->name('infor
 
 // Chatbox
 Route::get('/chat-box', [ChatboxController::class, 'chatbox'])->name('chatbox');
+Route::get('/group-chat', [ChatboxController::class, 'showChatbox'])->name('group-chat');
+Route::post('/group-chat/send', [ChatboxController::class, 'sendMessage'])->name('group-chat.send');
 
 Route::get('/diagnosa', [DiagnosaController::class, 'index'])->name('diagnosa.index');
+Route::get('/diagnosa/{id}', [DiagnosaController::class, 'show'])->name('diagnosa.show');
 Route::get('/form-pasien/{id}', [DiagnosaController::class, 'showForm'])->name('form.pasien');
-Route::post('/diagnosa/store/{id}', [DiagnosaController::class, 'storeDiagnosa'])->name('diagnosa.store');
+Route::post('/diagnosa/store/{id}', [DiagnosaController::class, 'store'])->name('diagnosa.store');

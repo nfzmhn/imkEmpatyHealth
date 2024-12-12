@@ -10,15 +10,16 @@ class RiwayatUser extends Model
     use HasFactory;
 
     protected $table = 'riwayat_user';
-    protected $primaryKey = 'id_riwayat_user';
+
+    // Tentukan kolom mana saja yang dapat diisi
     protected $fillable = [
         'id_reservasi',
-        'diagnosa',
+        'diagnosa'
     ];
 
-    // Relasi dengan model Reservasi
+    // Relasi dengan tabel reservasi
     public function reservasi()
     {
-        return $this->belongsTo(Reservasi::class, 'id_reservasi');
+        return $this->belongsTo(Reservasi::class, 'id_reservasi', 'id_reservasi');
     }
 }

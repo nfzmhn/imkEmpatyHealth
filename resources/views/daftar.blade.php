@@ -67,7 +67,7 @@
               </div>
 
               <!-- Tombol Submit -->
-              <button type="submit" class="sign-btn">Sign Up</button>
+              <button type="submit" class="sign-btn">Lengkapi Data Diri</button>
 
               <!-- Link ke Halaman Login -->
               <div class="to-signup">
