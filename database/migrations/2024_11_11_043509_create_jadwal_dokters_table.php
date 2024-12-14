@@ -29,6 +29,11 @@ return new class extends Migration
      */
     public function down(): void
     {
+        Schema::table('reservasi', function (Blueprint $table) {
+            $table->dropForeign(['id_jadwal_dokter']); // Drop foreign key di tabel lain (jika perlu)
+        });
+    
         Schema::dropIfExists('jadwal_dokters');
     }
+    
 };

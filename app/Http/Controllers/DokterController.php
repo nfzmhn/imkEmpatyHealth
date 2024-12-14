@@ -14,18 +14,19 @@ class DokterController extends Controller
     {
         // Ambil ID dokter yang sedang login dari session
         $dokterId = session('dokter_id');
-
+    
         // Pastikan dokter_id tersedia di session
         if (!$dokterId) {
             return redirect()->route('login')->with('error', 'Silakan login terlebih dahulu.');
         }
-
-        // Ambil semua janji pasien yang terkait dengan dokter yang login
+    
+        // Ambil semua janji pasien yang terkait dengan dokter yang login dan belum didiagnosa
         $reservasi = Reservasi::with(['dokter.spesialis', 'user'])
             ->where('id_dokter', $dokterId)
+            ->where('sudah_diagnosa', false) // Filter hanya pasien yang belum didiagnosa
             ->get();
-
+    
         // Return data ke view
         return view('dokter', ['reservasi' => $reservasi]);
     }
-}
+}    

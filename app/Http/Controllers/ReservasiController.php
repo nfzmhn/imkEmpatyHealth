@@ -104,4 +104,39 @@ class ReservasiController extends Controller
             return response()->json(['error' => 'Terjadi kesalahan. Silakan coba lagi.'], 500);
         }
     }
+    private function getMatchingScore(Dokter $dokter, User $user)
+    {
+        $score = 1; // Nilai dasar 1 agar dokter tetap muncul walaupun tidak ada kesamaan
+        // Bandingkan umur
+        if (abs($dokter->umur - $user->umur) <= 5) {
+            $score++;
+        }
+        // Bandingkan jenis kelamin
+        if ($dokter->jenis_kelamin == $user->jenis_kelamin) {
+            $score++;
+        }
+        // Bandingkan status pernikahan
+        if ($dokter->status_pernikahan == $user->status_pernikahan) {
+            $score++;
+        }
+        // Bandingkan alamat
+        $dokter_kota = $this->extractCity($dokter->alamat);
+        $user_kota = $this->extractCity($user->alamat);
+        if ($dokter_kota == $user_kota) {
+            $score++;
+        }
+        // Bandingkan latar belakang ekonomi
+        if ($dokter->latar_belakang == $user->penghasilan) {
+            $score++;
+            return response()->json(['error' => 'Terjadi kesalahan. Silakan coba lagi.'], 500);
+        }
+        return $score;
+    }
+        // Fungsi untuk mengekstrak kota dari alamat
+        private function extractCity($address)
+    {
+        $address_parts = explode(',', $address);
+        $city = trim(end($address_parts));
+        return $city;
+    }
 }

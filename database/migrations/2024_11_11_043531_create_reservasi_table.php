@@ -17,6 +17,7 @@ return new class extends Migration
             $table->unsignedBigInteger('id_dokter');
             $table->unsignedBigInteger('id_jadwal_dokter');
             $table->text('keluhan');
+            $table->boolean('sudah_diagnosa')->default(false);
             $table->timestamps();
 
             // Foreign key constraints
@@ -31,6 +32,14 @@ return new class extends Migration
      */
     public function down(): void
     {
+        Schema::table('reservasi', function (Blueprint $table) {
+            $table->dropForeign(['id_user']);
+            $table->dropForeign(['id_dokter']);
+            $table->dropForeign(['id_jadwal_dokter']);
+        });
+    
         Schema::dropIfExists('reservasi');
     }
+    
+    
 };

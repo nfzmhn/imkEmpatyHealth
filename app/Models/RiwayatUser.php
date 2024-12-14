@@ -14,6 +14,8 @@ class RiwayatUser extends Model
     // Tentukan kolom mana saja yang dapat diisi
     protected $fillable = [
         'id_reservasi',
+        'id_user',
+        'id_dokter',
         'diagnosa'
     ];
 
@@ -22,4 +24,10 @@ class RiwayatUser extends Model
     {
         return $this->belongsTo(Reservasi::class, 'id_reservasi', 'id_reservasi');
     }
+
+    public function user()
+{
+    return $this->belongsTo(User::class, 'id_user');
+}
+
 }

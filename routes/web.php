@@ -5,7 +5,6 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\HalamanUtamaController;
-use App\Http\Controllers\JanjiController;
 use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\KomunitasController;
 use App\Http\Controllers\InformasiController;
@@ -44,6 +43,9 @@ Route::post('/logindokter', [LoginDokterController::class, 'login'])->name('dokt
 Route::get('/logindokter', [LoginDokterController::class, 'showLoginForm'])->name('dokter.loginForm');
 Route::get('/views/dokter', [DokterController::class, 'pasiendokter'])->name('dokter');
 Route::get('/diagnosa', [DiagnosaController::class, 'index'])->name('diagnosa');
+Route::get('/dokter/pasiendokter', [DiagnosaController::class, 'index'])->name('dokter.pasiendokter');
+
+
 
 
 
