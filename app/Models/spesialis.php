@@ -20,6 +20,6 @@ class Spesialis extends Model
     // Relasi dengan Dokter (Spesialis memiliki banyak dokter)
     public function dokters()
     {
-        return $this->hasMany(Dokter::class, 'id_spesialis','nama_spesialis');
+        return $this->hasMany(Dokter::class, 'id_spesialis','id_spesialis');
     }
 }

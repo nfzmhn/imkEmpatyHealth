@@ -33,7 +33,7 @@ Route::get('/', function () {
 });
 
 // Login dan Register
-Route::post('/beranda', [LoginController::class, 'beranda'])->name('login.proses');
+Route::post('/views/halamanutama', [LoginController::class, 'beranda'])->name('login.proses');
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::get('/daftar', [LoginController::class, 'register'])->name('register');
 Route::post('/datadiri', [LoginController::class, 'saveStepOne'])->name('register.step.one.post');
@@ -62,7 +62,7 @@ Route::post('/logout', [ProfileController::class, 'logout'])->name('logout');
 // Reservasi Janji Dokter
 Route::get('/janji', [ReservasiController::class, 'index'])->name('reservasi.index')->middleware('auth'); // Halaman reservasi
 Route::post('/janji', [ReservasiController::class, 'store'])->name('reservasi.store')->middleware('auth'); // Simpan reservasi
-Route::get('/get-dokters', [ReservasiController::class, 'getDokters'])->name('reservasi.getDokters')->middleware('auth'); // Data dokter via AJAX
+Route::get('/get-dokters', [ReservasiController::class, 'getDokters']);// Data dokter via AJAX
 Route::get('/get-jadwal-dokter', [ReservasiController::class, 'getJadwalDokter']);
 
 // Jadwal Dokter

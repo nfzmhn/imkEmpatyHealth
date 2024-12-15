@@ -17,44 +17,77 @@ class ReservasiController extends Controller
     {
         // Ambil data user yang sedang login
         $user = auth()->user();
-
+    
         // Ambil semua data spesialis
         $spesialis = Spesialis::all();
-
+    
         // Ambil data dokter berdasarkan spesialis yang dipilih
-        $dokters = [];
+        $dokters = collect(); // Pastikan ini adalah koleksi kosong
+    
         if ($request->has('spesialis_id') && $request->get('spesialis_id')) {
-            $dokters = Dokter::where('id_spesialis', $request->get('spesialis_id'))->get();
+            // Ambil dokter berdasarkan spesialis yang dipilih dan muat relasi spesialis
+            $dokters = Dokter::with('spesialis') // Memuat relasi spesialis
+                             ->where('id_spesialis', $request->get('spesialis_id'))
+                             ->get();
+            
+            // Tambahkan log untuk mengecek apakah data dokter berhasil diambil
+            Log::info('Dokters fetched:', $dokters->toArray());
         }
-
+    
+        // Jika dokter ditemukan, urutkan berdasarkan kecocokan dengan user
+        if ($dokters->isNotEmpty()) { // Gunakan isNotEmpty() untuk koleksi
+            // Ubah array menjadi koleksi dan urutkan dokter berdasarkan kecocokan dengan pengguna
+            $dokters = $dokters->sortByDesc(function ($dokter) use ($user) {
+                return $this->getMatchingScore($dokter, $user); // Mengurutkan berdasarkan skor
+            });
+    
+            // Tambahkan log setelah dokter diurutkan
+            Log::info('Dokters sorted:', $dokters->toArray());
+        }
+    
         // Ambil jadwal dokter
         $jadwals = [];
-        if (!empty($dokters)) {
+        if ($dokters->isNotEmpty()) {
             $jadwals = JadwalDokter::whereIn('id_dokter', $dokters->pluck('id'))->get();
         }
-
+    
         // Return ke view
         return view('janji', compact('spesialis', 'dokters', 'jadwals'));
     }
-
+    
     // Fungsi untuk mengambil data dokter via AJAX
     public function getDokters(Request $request)
     {
         $spesialisId = $request->get('spesialis_id');
+        $user = auth()->user();
 
         if (!$spesialisId) {
             return response()->json([], 400);
         }
 
-        $dokters = Dokter::where('id_spesialis', $spesialisId)->get();
+        $dokters = Dokter::with('spesialis')
+                        ->where('id_spesialis', $spesialisId)
+                        ->get();
+
+        // Log data dokter yang diambil
+        Log::info('Dokters fetched via AJAX:', $dokters->toArray());
 
         if ($dokters->isEmpty()) {
             return response()->json([], 404);
         }
 
-        Log::info('Dokters fetched:', $dokters->toArray());
-        return response()->json($dokters);
+        // Urutkan dokter berdasarkan kecocokan dengan pengguna
+        $dokters = $dokters->sortByDesc(function ($dokter) use ($user) {
+            return $this->getMatchingScore($dokter, $user);
+        });
+
+        // Ubah ke array dan reset kunci
+        $doktersArray = array_values($dokters->toArray());
+
+        // Mengembalikan data dokter yang sudah diurutkan
+        return response()->json($doktersArray);
     }
+    
 
     // Fungsi untuk mengambil data jadwal dokter via AJAX
     public function getJadwalDokter(Request $request)
@@ -104,39 +137,47 @@ class ReservasiController extends Controller
             return response()->json(['error' => 'Terjadi kesalahan. Silakan coba lagi.'], 500);
         }
     }
+
+    // Fungsi untuk menghitung skor kecocokan antara dokter dan pasien
     private function getMatchingScore(Dokter $dokter, User $user)
     {
         $score = 1; // Nilai dasar 1 agar dokter tetap muncul walaupun tidak ada kesamaan
+        
         // Bandingkan umur
         if (abs($dokter->umur - $user->umur) <= 5) {
             $score++;
         }
+
         // Bandingkan jenis kelamin
         if ($dokter->jenis_kelamin == $user->jenis_kelamin) {
             $score++;
         }
+
         // Bandingkan status pernikahan
         if ($dokter->status_pernikahan == $user->status_pernikahan) {
             $score++;
         }
-        // Bandingkan alamat
+
+        // Bandingkan alamat (kota)
         $dokter_kota = $this->extractCity($dokter->alamat);
         $user_kota = $this->extractCity($user->alamat);
         if ($dokter_kota == $user_kota) {
             $score++;
         }
-        // Bandingkan latar belakang ekonomi
+
+        // Bandingkan latar belakang ekonomi (misalnya penghasilan)
         if ($dokter->latar_belakang == $user->penghasilan) {
             $score++;
-            return response()->json(['error' => 'Terjadi kesalahan. Silakan coba lagi.'], 500);
         }
+
         return $score;
     }
-        // Fungsi untuk mengekstrak kota dari alamat
-        private function extractCity($address)
+
+    // Fungsi untuk mengekstrak kota dari alamat
+    private function extractCity($address)
     {
         $address_parts = explode(',', $address);
-        $city = trim(end($address_parts));
+        $city = trim(end($address_parts)); // Ambil bagian kota dari alamat
         return $city;
     }
 }
