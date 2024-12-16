@@ -22,4 +22,10 @@ class Spesialis extends Model
     {
         return $this->hasMany(Dokter::class, 'id_spesialis','id_spesialis');
     }
+
+    public function forum()
+    {
+        return $this->hasMany(Forum::class, 'id_spesialis', 'id_spesialis');
+    }
+
 }

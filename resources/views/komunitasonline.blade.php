@@ -1,5 +1,3 @@
-
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -8,8 +6,8 @@
   <title>Medy Budy</title>
   <link rel="stylesheet" href="{{ asset('komunitasonline/komunitasonline.css') }}">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
-</head>
 
+</head>
 <body>
   <div class="container">
     <!-- Sidebar -->
@@ -28,12 +26,9 @@
         <span class="textSidebar">Group Chat</span>
       </div>
       <div class="profile" id="profile">
-    <img src="lg/img/Ellipse 8.png" alt="Profile">
-
-    <!-- Nama Pengguna -->
-    <span class="textSidebar">{{ Auth::user()->nama_depan }} {{ Auth::user()->nama_belakang }}</span>
-</div>
-
+        <img src="lg/img/Ellipse 8.png" alt="Profile">
+        <span class="textSidebar">{{ Auth::user()->nama_depan }} {{ Auth::user()->nama_belakang }}</span>
+      </div>
       <div class="logout" id="logout">
         <span class="material-symbols-outlined">logout</span>
         <span class="textSidebar">Log Out</span>
@@ -42,34 +37,23 @@
 
     <!-- Main Content -->
     <div class="main-content">
-      <div class="card">
-        <div class="card-text">
-          <a href="{{ url('/chat-box') }}">
-            <h4>Telinga Hidung Tenggorokan</h4>
-          </a>
-          <p>Lorem Ipsum Dolor sit amet</p>
+      @forelse($forums as $forum)
+        <div class="card">
+          <div class="card-text">
+            <!-- Tautan menuju chatbox masing-masing forum -->
+            <h3>{{ $forum->nama_forum }}</h3>
+        <p>{{ $forum->deskripsi }}</p>
+        <!-- Ganti dengan link WhatsApp -->
+        <a href="{{ $forum->whatsapp_link }}" class="btn-custom" target="_blank">Silahkan Bergabung</a>
         </div>
-        <div class="badge">34</div>
-      </div>
-      <div class="card">
-        <div class="card-text">
-          <a href="{{ url('/chat-box') }}">
-            <h4>Kulit</h4>
-          </a>
-          <p>Lorem Ipsum Dolor sit amet</p>
         </div>
-      </div>
-      <div class="card">
-        <div class="card-text">
-          <a href="{{ url('/chat-box') }}">
-            <h4>Alergi</h4>
-          </a>
-          <p>Lorem Ipsum Dolor sit amet</p>
-        </div>
-      </div>
+
+      @empty
+      <p>Tidak ada riwayat medis yang ditemukan.</p>
+      @endforelse
     </div>
   </div>
+
   <script src="{{ asset('komunitasonline/komunitasonline.js') }}"></script>
 </body>
-
 </html>

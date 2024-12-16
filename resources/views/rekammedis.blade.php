@@ -63,11 +63,16 @@
           <!-- Diagnosa -->
           <p class="jarak">Diagnosa: {{ $data->diagnosa }}</p>
         </div>
-        <button class="forum-btn" data-link="{{ url('/chat-box') }}">Masuk Forum</button>
       </div>
       @empty
       <p>Tidak ada riwayat medis yang ditemukan.</p>
       @endforelse
+
+      @if($riwayat->isNotEmpty())
+  <div class="forum-button-container">
+    <button class="forum-btn" data-link="{{ url('/komunitas-online') }}">Masuk Forum</button>
+  </div>
+  @endif
     </section>
   </main>
 

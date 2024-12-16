@@ -14,6 +14,7 @@ use App\Http\Controllers\LoginDokterController;
 use App\Http\Controllers\DiagnosaController;
 use App\Http\Controllers\DokterController;
 use App\Http\Controllers\RekamController;
+use App\Http\Controllers\ForumController;
 
 
 /*
@@ -76,11 +77,6 @@ Route::get('/komunitas-online', [KomunitasController::class, 'komunitasonline'])
 
 // Informasi
 Route::get('/informasi', [InformasiController::class, 'informasi'])->name('informasi');
-
-// Chatbox
-Route::get('/chat-box', [ChatboxController::class, 'chatbox'])->name('chatbox');
-Route::get('/group-chat', [ChatboxController::class, 'showChatbox'])->name('group-chat');
-Route::post('/group-chat/send', [ChatboxController::class, 'sendMessage'])->name('group-chat.send');
 
 Route::get('/diagnosa', [DiagnosaController::class, 'index'])->name('diagnosa.index');
 Route::get('/diagnosa/{id}', [DiagnosaController::class, 'show'])->name('diagnosa.show');

@@ -27,7 +27,23 @@ class RiwayatUser extends Model
 
     public function user()
 {
-    return $this->belongsTo(User::class, 'id_user');
+    return $this->belongsTo(User::class, 'id_user', 'id');
 }
 
+ // Relasi untuk mengambil spesialis melalui dokter di reservasi
+ public function spesialis()
+ {
+     return $this->hasOneThrough(Spesialis::class, Dokter::class, 'id_dokter', 'id_spesialis', 'id_dokter', 'id_spesialis');
+ }
+ // Relasi ke tabel Dokter
+ public function dokter()
+ {
+     return $this->belongsTo(Dokter::class, 'id_dokter');
+ }
+
+ // Tambahkan relasi ke forum (melalui dokter/spesialis)
+ public function forum()
+ {
+     return $this->belongsTo(Forum::class, 'id_forum', 'id_forum');
+ }
 }

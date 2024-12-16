@@ -97,4 +97,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Reservasi::class, 'id_user', 'id');
     }
+
+    public function riwayatuser()
+{
+    return $this->hasMany(RiwayatUser::class, 'id_user', 'id');
+}
 }

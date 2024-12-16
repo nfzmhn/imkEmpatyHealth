@@ -128,7 +128,7 @@
                 <h3>Rekam Medis</h3>
                 <p>Lihat riwayat penyakit yang di alami</p>
             </a>
-            <a href="{{ route('rekammedis') }}" style="text-decoration: none; color: inherit;" class="service-box" id="komunitas-online">
+            <a href="{{ url('komunitas-online') }}" style="text-decoration: none; color: inherit;" class="service-box" id="komunitas-online">
                 <img src="{{ asset('lg/img/konsul.png') }}" alt="Konsultasi Online">
                 <h3>Komunitas Online</h3>
                 <p>Konsultasi dengan dokter hanya dengan handphone</p>
